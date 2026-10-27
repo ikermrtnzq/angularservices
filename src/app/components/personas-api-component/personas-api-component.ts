@@ -13,12 +13,35 @@ export class PersonasApiComponent implements OnInit{
   constructor(private _cdr: ChangeDetectorRef, 
     private _service: ServicePersonas ){
   }
-  ngOnInit(): void {
-    //si devuelve un observable ns subscribimos a su promise
-    this._service.getPersonas().subscribe((response) =>{
-      this.personas= response;
+  async ngOnInit(): Promise<void> {
+
+    //LLamada por async await
+    /* try {
+      this.personas = await this._service.getPersonasAsync();
       this._cdr.detectChanges();
-    })
+    } catch (error) {
+      console.log(error)
+    }*/
     
+    
+    //LLamada para promise
+    /*this._service.getPersonasPromsa().then((response) =>{
+      this.personas = response;
+      this._cdr.detectChanges();
+    }).catch((error: any) => {
+        console.log(error)
+    })*/
+
+
+      //Llamada a http
+    //si devuelve un observable ns subscribimos a su promise
+    this._service.getPersonas().subscribe({
+      next : (response) => {
+        this.personas = response;
+        this._cdr.detectChanges()
+      }, error: (error) => {
+        console.log(error)
+      }
+    })
   }
 }

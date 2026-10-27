@@ -1,0 +1,13 @@
+<div style=" display: flex; flex-direction: column; gap: 40px; margin-top: 20px;">
+    @for (coche of coches; track coche) {
+        <div style="display: flex; flex-direction: row; gap: 60px; border: 5px solid antiquewhite; padding: 30px; width: fit-content;">
+            <div style="display: flex; flex-direction: column;">
+                <p><b>MARCA</b> {{coche.marca}}</p>
+                <p><b>MODELO</b> {{coche.modelo}}</p>
+                <p><b>CONDUCTOR</b>: {{coche.conductor}}</p>
+            </div>
+            <img style="width: 280px;" src={{coche.imagen}} alt="">
+        </div>
+    }
+</div>
+
