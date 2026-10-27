@@ -4,12 +4,15 @@ import { ComicComponent } from './components/comic-component/comic-component';
 import { PersonasApiComponent } from './components/personas-api-component/personas-api-component';
 import { CochesApiComponent } from './components/coches-api-component/coches-api-component';
 import { PlantillasFuncionSimpleComponent } from './components/plantillas-funcion-simple-component/plantillas-funcion-simple-component';
+import { PlantillasFuncionMultipleComponent } from './components/plantillas-funcion-multiple-component/plantillas-funcion-multiple-component';
 
 const routes: Routes = [
   {path: "", component: ComicComponent},
   {path: "personas", component: PersonasApiComponent},
   {path: "coches", component: CochesApiComponent},
   {path: "plantilla", component: PlantillasFuncionSimpleComponent},
+  {path: "plantillaMultiple", component: PlantillasFuncionMultipleComponent},
+
 
 
 ];

@@ -19,4 +19,16 @@ export class ServicePlantillas{
         let endpoint = "api/Plantilla/PlantillaFuncion/" + funcionElegida;
         return firstValueFrom(this._http.get<Plantilla[]>(url+endpoint))
     }
+    async getPlantillaFunciones(funciones: Array<string[]>) : Promise<Plantilla[]>{
+        let content="";
+        for (let funcion of funciones) {
+            content+= "funcion="+ funcion + "&";
+        }
+        content = content.substring(0, content.length-1);
+        
+        let url = environment.urlApiFunciones;
+        let endpoint = "api/Plantilla/PlantillaFunciones?" + content;
+        console.log(url+endpoint)
+        return firstValueFrom(this._http.get<Plantilla[]>(url+endpoint))
+    }
 }
