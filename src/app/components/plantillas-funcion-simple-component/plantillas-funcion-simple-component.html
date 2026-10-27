@@ -1,7 +1,7 @@
 <div style="display: flex; flex-direction: column; gap: 30px;margin-top: 10px;">
     <h1 style="margin-left: 40px;">PLANTILLAS SIMPLE</h1>
     <form #selectForm= "ngForm" (ngSubmit)="obtenerPlantilla()" style="display: flex; flex-direction: column; gap: 5px;">
-        <select #selectfuncion  (mouseenter)="color = 'lightblue'" (mouseleave)="color = 'white'" name="" id="" style="margin-top: 10px; border: 1px solid lightblue; border-radius: 5px;">
+        <select name="selectfuncion" #selectfuncion  (mouseenter)="color = 'lightblue'" (mouseleave)="color = 'white'" name="" id="" style="margin-top: 10px; border: 1px solid lightblue; border-radius: 5px;">
             @for (funcion of funciones; track funcion) {
                 <option value="{{funcion}}">{{funcion}}</option>
             }
